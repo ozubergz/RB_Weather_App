@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.rb_weather_app.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_weatherDetail"
+            app:destination="@id/weatherDetail" />
+    </fragment>
+    <fragment
+        android:id="@+id/weatherDetail"
+        android:name="com.example.rb_weather_app.WeatherDetail"
+        android:label="fragment_weather_detail"
+        tools:layout="@layout/fragment_weather_detail" >
+        <argument
+            android:name="data"
+            app:argType="com.example.rb_weather_app.model.Daily" />
+        <argument
+            android:name="location"
+            app:argType="string" />
+    </fragment>
+</navigation>
