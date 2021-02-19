@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
@@ -21,8 +22,8 @@ import com.example.rb_weather_app.viewmodel.MainViewModel
 class MainFragment : Fragment(), ClickListener {
 
     private lateinit var binding: FragmentMainBinding
-    private lateinit var viewModel: MainViewModel
     private lateinit var location: String
+    private val viewModel: MainViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -34,9 +35,9 @@ class MainFragment : Fragment(), ClickListener {
     @SuppressLint("SetTextI18n")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        activity.let {
-            viewModel = ViewModelProvider(it!!).get(MainViewModel::class.java)
-        }
+//        activity.let {
+//            viewModel = ViewModelProvider(it!!).get(MainViewModel::class.java)
+//        }
 
         viewModel.weather.observe(viewLifecycleOwner, Observer {
             val current = it.current

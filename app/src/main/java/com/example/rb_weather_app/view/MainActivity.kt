@@ -1,12 +1,10 @@
 package com.example.rb_weather_app.view
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import androidx.activity.viewModels
-import androidx.lifecycle.Observer
+import androidx.appcompat.app.AppCompatActivity
 import com.example.rb_weather_app.R
-import com.example.rb_weather_app.databinding.ActivityMainBinding
 import com.example.rb_weather_app.viewmodel.MainViewModel
 
 class MainActivity : AppCompatActivity() {

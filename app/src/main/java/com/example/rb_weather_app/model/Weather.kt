@@ -22,7 +22,7 @@ data class Weather @JvmOverloads constructor(
     @Json(name = "timezone_offset")
     val timezoneOffset: Int,
     @Ignore val current: @RawValue Current? = null,
-    @Ignore val daily: List<Daily>? = listOf()
+    val daily: List<Daily>
 ) : Parcelable {
 
     @PrimaryKey(autoGenerate = false)
