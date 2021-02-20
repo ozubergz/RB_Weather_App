@@ -4,8 +4,6 @@ import android.content.Context
 import android.util.Log
 import com.example.rb_weather_app.data.WeatherDatabase
 import com.example.rb_weather_app.model.Weather
-import kotlinx.coroutines.launch
-import retrofit2.Response
 
 object Repository {
 
@@ -18,7 +16,7 @@ object Repository {
             lon: Double,
             exclude: String,
             units: String,
-            appid: String
+            appid: Int
         ) : Weather? {
 
             val sharedPref = context.getSharedPreferences("", Context.MODE_PRIVATE)

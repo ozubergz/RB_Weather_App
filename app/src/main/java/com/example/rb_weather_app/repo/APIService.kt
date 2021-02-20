@@ -15,7 +15,7 @@ interface APIService {
             @Query("lon") lon: Double,
             @Query("exclude") exclude: String,
             @Query("units") units: String,
-            @Query("appid") appid: String
+            @Query("appid") appid: Int
     ) : Response<Weather>
 
 }
